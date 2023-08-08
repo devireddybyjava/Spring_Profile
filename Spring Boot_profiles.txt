@@ -1,0 +1,86 @@
+Profiles:
+
+When we develop an application in real time that application willbe tested in multiple environments before deploying to production.
+
+Production: Live Environment
+
+How application went to the production?
+
+-->we will test our application in several  environments.
+
+   a) DEV
+  b) SIT
+  c) UAT
+  d) PILOT [pre-production]
+
+environment means we are going to give infrastructure for our application.
+
+suppose a, b, c developers working on different modules, they will connect to the git repository.
+
+suppose our company provides above mentioned  environments and Jenkins tools for build and Deployement purpose.
+
+Jenkins is connected with Git Repo and choosen latest code as well.
+
+Developer are reported their codes into the Git repository, then Jenkins tool will choose latest code for testing on several enviroments such as Dev, SIN(QA), UAT(Userc Acceptance Testing), 
+Pilot and production.
+
+a,b,c ---> [   ]  => DEV [Application] ---  Dev schema
+
+Above diagram tells us about deployment and testing on DEV Environment
+
+here application deployed under Dev Enviroment , this Dev contains dedicated Data Schema i.e Dev Schema.  after the completion of Dev testing and deployement , 
+it deployed under SIT( System Integration Testing) environment.
+
+Sit [QA] --> testing team will test the application , this SIT contains dedicated Data Schema i.e SIT Schema. Credentails are different for all environments.
+
+here application went to the each environement.
+
+UAT----> this testing will cover at client side. this UAT contains dedicated Data Schema i.e UAT Schema.
+
+Pilot ---> it is pre production testing enviroment. this one also contains dedicated Data Schema i.e PILOT Schema.
+
+
+Finally we will test production env as well. it is live enviroment.
+
+
+
+==>  Data base teams will provides data schemas for environmemts such as DEV schema, SIT schema, UAT schema, PILOT schema.
+
+
+
+Every time our application deployed  in enviroments then we need to modify the DB properties [ application.properties or application.yml]
+
+
+For every environement specific enviroment  properties will beavailable:
+--------------------------------------------------------------------------------------------
+
+i) DB  ii) SMTP  iii) Logging   iv) Radis Server  v) Kafka   vi) web services/RestAPI  end points
+
+
+all above mentioned properties are writting under application.properties or application.yml
+
+application-dev.yml
+application-qa.yml
+application-uat.yml
+application-pilot.yml
+application.yml    :: spring.profile.active:=dev
+
+
+profiles:  to configure enviroment specifics
+
+without profiles we need to change the env-env propertioes, it is hectics.
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+

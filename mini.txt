@@ -1,0 +1,13 @@
+Token: 
+
+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
+
+Repository:
+
+https://github.com/devireddybyjava/Insurance_Application.git
+
+$ git config --global user.email "dpmr715151@gmail.com"
+
+$ git config --global user.name "devireddybyjava"
+
+git remote add origin https://github.com/devireddybyjava/SwiftTool.git
